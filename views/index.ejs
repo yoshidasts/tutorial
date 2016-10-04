@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Input Data</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Input Data</h1>
+    <form action="/confirm" method="POST">
+        <div>Name: <input type="text" name="name" required></div>
+        <div>Mail: <input type="email" name="email" required></div>
+        <div>Birthday: <input type="date" name="birthday" required></div>
+        <div>Gender: <input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female" reduired>Female</div>
+        <div><input type="submit" value="Next">
+    </form>
   </body>
 </html>
