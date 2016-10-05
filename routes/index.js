@@ -1,5 +1,5 @@
 var express = require('express');
-var fs = require('fs');
+var user = require('../model/user');
 var router = express.Router();
 
 /* GET home page. */
@@ -15,9 +15,13 @@ router.post('/confirm', function(req, res, next) {
 
 /* POST complete page. */
 router.post('/complete', function(req, res, next) {
-    var form = req.session.form;
-    fs.writeFile('output.txt', JSON.stringify(form), function(err){
-        res.render('complete', form);
+    var doc = req.session.form;
+    user.addUser(doc, function(err){
+        if(err){
+            next(err);
+        }else{
+            res.render('complete', doc);
+        }
     });
 });
 module.exports = router;

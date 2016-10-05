@@ -7,10 +7,14 @@
   <body>
     <h1>Input Data</h1>
     <form action="/complete" method="POST">
-        <div>Name: <%= name%>
+        <div>Name: <%= name %>
         <div>Mail: <%= email %>
         <div>Birthday: <%= birthday %>
         <div>Gender: <%= gender %>
+        <input type="hidden" name="name" value"<%= name %>">
+        <input type="hidden" name="email" value"<%= email %>">
+        <input type="hidden" name="birthday" value"<%= email %>">
+        <input type="hidden" name="gender" value"<%= gender %>">
         <div><input type="submit" value="Complete">
     </form>
   </body>
